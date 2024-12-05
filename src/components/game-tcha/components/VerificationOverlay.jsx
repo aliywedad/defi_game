@@ -9,14 +9,15 @@ export const VerificationOverlay = ({ status, onRetry, onStart }) => {
       <div className="text-center">
         {status === 'idle' && (
           <>
-            <h2 className="text-2xl font-bold text-white mb-4">Pixel Defender CAPTCHA</h2>
-            <p className="text-gray-200 mb-2">Defend against pixel invaders to verify you're human</p>
-            <div className="text-gray-300 mb-6 space-y-2 text-sm">
-              <p>🎮 Controls: Arrow keys/WASD to move, Enter/Click to shoot</p>
-              <p>⏱️ Time Limit: 10 seconds</p>
-              <p>🎯 Goal: Score at least 30 points to verify</p>
-              <p>❤️ Lives: 3 (avoid enemy collisions)</p>
-            </div>
+          <h2 className="text-2xl font-bold text-white mb-4">CAPTCHA Défenseur de Pixels</h2>
+          <p className="text-gray-200 mb-2">Défendez-vous contre les envahisseurs de pixels pour vérifier que vous êtes humain</p>
+          <div className="text-gray-300 mb-6 space-y-2 text-sm">
+          <p>🎮 Commandes : Flèches directionnelles/WASD pour se déplacer, Entrée/Clique pour tirer</p>
+          <p>⏱️ Limite de temps : 10 secondes</p>
+          <p>🎯 Objectif : Obtenez au moins 30 points pour vérifier</p>
+          <p>❤️ Vies : 3 (évitez les collisions avec les ennemis)</p>
+          </div>
+
             <button
               onClick={onStart}
               className="flex items-center gap-2 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"

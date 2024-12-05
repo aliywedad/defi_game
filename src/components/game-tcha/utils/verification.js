@@ -4,7 +4,7 @@ const HUMAN_PATTERNS = {
   MIN_DIRECTION_CHANGES: 3, // Reduced for shorter game
   MIN_RESPONSE_TIME: 150,
   MAX_RESPONSE_TIME: 800,
-  MIN_SCORE: 30 // Added minimum score requirement
+  MIN_SCORE: 3// Added minimum score requirement
 };
 
 export const analyzePlayerBehavior = async (actions) => {
@@ -68,3 +68,39 @@ export const analyzePlayerBehavior = async (actions) => {
     finalScore >= HUMAN_PATTERNS.MIN_SCORE
   );
 };
+
+
+
+
+
+// const HUMAN_PATTERNS = {
+//   MIN_SPEED: 0.1, // Vitesse minimale raisonnable
+//   MAX_SPEED: 2.0, // Vitesse maximale raisonnable
+//   MIN_ACTIONS: 5  // Nombre minimal d'actions
+// };
+
+// export const analyzePlayerBehavior = async (actions) => {
+//   // Vérifier si le joueur a effectué suffisamment d'actions
+//   if (actions.length < HUMAN_PATTERNS.MIN_ACTIONS) return false;
+
+//   // Filtrer les actions de type MOVE
+//   const moveActions = actions.filter(a => a.type === 'MOVE');
+
+//   if (moveActions.length < 2) return false; // Nécessaire pour calculer une vitesse
+
+//   // Calcul des vitesses
+//   const speeds = [];
+//   for (let i = 1; i < moveActions.length; i++) {
+//     const dx = moveActions[i].x - moveActions[i-1].x;
+//     const dy = moveActions[i].y - moveActions[i-1].y;
+//     const dt = moveActions[i].timestamp - moveActions[i-1].timestamp;
+//     const speed = Math.sqrt(dx * dx + dy * dy) / dt;
+//     speeds.push(speed);
+//   }
+
+//   // Calcul de la vitesse moyenne
+//   const avgSpeed = speeds.reduce((a, b) => a + b, 0) / speeds.length;
+
+//   // Valider si la vitesse moyenne est dans une plage raisonnable
+//   return avgSpeed >= HUMAN_PATTERNS.MIN_SPEED && avgSpeed <= HUMAN_PATTERNS.MAX_SPEED;
+// };
